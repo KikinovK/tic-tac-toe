@@ -34,14 +34,14 @@ class TicTacToe {
                     mainDiagonal.push(this.playingField[i][j])
                 };
                 if (i === this.playingField.length - j - 1) {
-                    minorDiagonal.push(this.playingField[i][this.playingField[i].length - j - 1])
+                    minorDiagonal.push(this.playingField[i][j]);
                 }
             };
             result.push(this.playingField[i], column);
         };
         result.push(mainDiagonal, minorDiagonal);
         let resultSymbol = result.filter(array => new Set(array).size == 1 && array[0])
-        return resultSymbol.length > 1 ? resultSymbol[0][0] : null
+        return resultSymbol.length > 0 ? resultSymbol[0][0] : null
 
     }
 
